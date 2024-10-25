@@ -1,17 +1,16 @@
-# Welcome to MkDocs
+# Home page
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+## Other items
 
-## Commands
+Here's some code:
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+```python title="not bubble_sort.py" linenums="1" hl_lines="2 3"
+if parts[-1] == "__init__":
+    parts = parts[:-1] or src.parts[-1:]
+    if not parts:
+        # we're in root pkg
+        parts = src.parts[-1:] # (1)!
+```
 
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+1. :man_raising_hand: I'm a code annotation! I can contain `code`, **formatted
+    text**, images, ... basically anything that can be written in Markdown.
