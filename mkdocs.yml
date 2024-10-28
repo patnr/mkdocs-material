@@ -1,10 +1,8 @@
 site_name: My example site
 site_author: NORCE
 site_url: https://mydomain.org/mysite
-# edit_uri: blob/master/docs/
-# repo_name: patnr/remedy.no
-# repo_url: https://github.com/patnr/remedy.no
-# copyright: Copyright &copy; 2024 NORCE
+repo_url: https://github.com/patnr/mkdocs2
+edit_uri: edit/main/docs/
 
 docs_dir: docs
 # nav:
@@ -14,18 +12,41 @@ docs_dir: docs
 
 theme:
   name: material
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil 
+    view: material/eye
   features:
-    - content.code.copy
-    # - content.code.select # insiders only
-    - content.code.annotate
+    - content.code.copy # copy button
+    # - content.code.select # [insiders only]
+    - content.code.annotate # clickable toggler for code comments
+    - navigation.indexes # enable subdir/index.md
+    - toc.follow # ?
+    # - toc.integrate # render ToC as part of left sidebar [not compat with navigation.indexes]
+    - navigation.tabs # top-level sections rendered in header tabs (for wide screens) instead of left sidebar
+    # - navigation.tabs.sticky # don't hide tabs when scrolled
+    # - navigation.expand # expand sections
+    # - navigation.sections # group (rather than collapse) top-level sections 
+    - navigation.path # breadcrumbs
+    # - navigation.prune # for large projects
+    - navigation.tracking # update URL to current section
+    - navigation.footer # "Next/Prev"
+    - navigation.instant # SSA
+    - navigation.instant.progress # Progbar on top
+    - navigation.top # "back to top when scrolling up"
+    - header.autohide
+    - search.highlight # highlight matches on page
+    - search.share # deep link to search
+    - search.suggest # search suggestions
+
   custom_dir: overrides
 
 plugins:
-  - glightbox
+  - glightbox # zoom functionality
   # - roamlinks
   # - blog
   - search
-  - autorefs
+  - autorefs # enable anchor/heading links without specifying its page
 
   # Autodoc from docstrings:
   - gen-files: # Genrate .md reflecting .py hierarchy:
@@ -34,7 +55,7 @@ plugins:
   - literate-nav: # Auto-generate nav
       nav_file: SUMMARY.md
   - section-index
-  - mkdocstrings: # Extract docstrings
+  - mkdocstrings: # Parse docstrings
       handlers:
         python:
           paths: [., example]
@@ -48,12 +69,15 @@ markdown_extensions:
   # Python Markdown official extensions
   - abbr
   - admonition
-  - attr_list
   - def_list
   - footnotes
-  - md_in_html
   - toc:
-      permalink: true
+      title: On this page
+      permalink: ⚓︎
+      toc_depth: 3
+  # Adds the ability to align images, add captions to images (rendering them as figures), and mark large images for lazy-loading:
+  - attr_list
+  - md_in_html
 
   # Extensions part of Pymdown
   - pymdownx.arithmatex:
@@ -96,6 +120,7 @@ extra_css:
 
 
 extra:
+  generator: false # "Made with Material for MkDocs"
   footer:
     logos:
       row1:
