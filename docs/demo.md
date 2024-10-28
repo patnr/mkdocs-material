@@ -1,5 +1,7 @@
 ---
 title: Demo
+hide:
+- navigation
 ---
 
 # Demonstration of markdown extensions
