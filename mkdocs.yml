@@ -48,6 +48,7 @@ plugins:
   - search
   - autorefs # enable anchor/heading links without specifying its page
   # - meta # [insiders only] enable front-matter defaults as in Jekyll
+  - mkdocs-jupyter
 
   # Autodoc from docstrings:
   - gen-files: # Genrate .md reflecting .py hierarchy:
