@@ -18,6 +18,7 @@ theme:
     - content.code.copy
     # - content.code.select # insiders only
     - content.code.annotate
+  custom_dir: overrides
 
 plugins:
   - glightbox
