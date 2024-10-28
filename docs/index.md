@@ -4,6 +4,10 @@
 
 ## Other items
 
+Here's some math $a = b^2$,
+
+$$ a^{2} = \mathbf{u} \nu $$
+
 Here's some code:
 
 ```python title="not bubble_sort.py" linenums="1" hl_lines="2 3"
