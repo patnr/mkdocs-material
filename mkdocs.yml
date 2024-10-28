@@ -1,17 +1,39 @@
 site_name: My example site
 site_url: https://mydomain.org/mysite
+# edit_uri: blob/master/docs/
+# nav:
+#   - Home: index.md
+#   - Other: other_page.md
+#   - Reference: reference/
+
 theme:
   name: material
   features:
     - content.code.copy
     # - content.code.select # insiders only
     - content.code.annotate
+
 plugins:
   - glightbox
   # - roamlinks
   # - blog
   - search
   - autorefs
+
+  # Autodoc from docstrings:
+  - gen-files: # Genrate .md reflecting .py hierarchy:
+      scripts:
+        - scripts/gen_ref_pages.py
+  - literate-nav: # Auto-generate nav
+      nav_file: SUMMARY.md
+  - section-index
+  - mkdocstrings: # Extract docstrings
+      handlers:
+        python:
+          paths: [., example]
+          import:
+            - https://docs.python.org/3/objects.inv
+            - https://mkdocstrings.github.io/objects.inv
 
 # Mostly from
 # https://squidfunk.github.io/mkdocs-material/setup/extensions/#recommended-configuration

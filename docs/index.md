@@ -1,5 +1,7 @@
 # Home page
 
+::: example.myvar_a
+
 ## Other items
 
 Here's some code:
