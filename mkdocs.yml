@@ -82,6 +82,9 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.tilde
 
+hooks:
+  - list_logos.py
+
 extra_javascript:
   - javascripts/extra.js
   # For MathJax
