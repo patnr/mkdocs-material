@@ -4,6 +4,7 @@ site_url: https://mydomain.org/mysite
 repo_url: https://github.com/patnr/mkdocs2
 edit_uri: edit/main/docs/
 
+watch: [mkdocs.yml, README.md, example, scripts/gen_ref_pages.py]
 docs_dir: docs
 # nav:
 #   - Home: index.md
